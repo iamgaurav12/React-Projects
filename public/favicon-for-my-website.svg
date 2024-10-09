@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Background Gradient with Modern Color Palette -->
+    <defs>
+      <radialGradient id="grad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" style="stop-color:#0F2027;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#203A43;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#2C5364;stop-opacity:1" />
+      </radialGradient>
+  
+      <!-- Soft Outer Glow -->
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+  
+      <!-- Text Shadow for Depth -->
+      <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+      </filter>
+    </defs>
+  
+    <!-- Circle with gradient and soft glow -->
+    <circle cx="50" cy="50" r="48" fill="url(#grad3)" filter="url(#glow)" />
+  
+    <!-- Stylish Initials Text with subtle shadow -->
+    <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="34" font-weight="bold" fill="#E0E0E0" letter-spacing="3" filter="url(#textShadow)">
+      GP
+    </text>
+  </svg>
+  
